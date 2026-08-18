@@ -6,7 +6,7 @@ from scipy.stats import pearsonr
 # actual celebrity heights
 realheights = [171.5, 167.6, 171.5, 188, 188, 180.3, 154.9, 164, 156.2, 168, 167, 182.2, 185, 160, 184.2, 177.8, 172.1, 167.6, 167.6, 173, 185, 194.9, 155, 183.5, 155.6, 155, 174.6, 190, 175.3, 158, 163.8, 175.3, 189.9, 185.4, 171.5, 210.1, 183, 172, 176.5, 185.4, 214, 192.4, 192.4, 180.3, 170, 185, 175.9, 190.5, 174, 174]
 # height ranges from 0 to 127, with 0 being 140cm, 127 being 203.5cm, and a linear scale between
-df=pd.read_csv(r"C:\Users\chees\OneDrive\Microsoft Teams Chat Files\Documents\world.csv")
+df=pd.read_csv("world.csv")
 def height(miiheight):
     miiheight*=0.5
     miiheight+=140
