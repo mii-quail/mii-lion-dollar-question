@@ -7,7 +7,7 @@ from scipy.stats import norm
 n = 1000
 p = 0.071652
 # height ranges from 0 to 127, with 0 being 140cm, 127 being 203.5cm, and a linear scale between
-df=pd.read_csv(r"C:\Users\chees\OneDrive\Microsoft Teams Chat Files\Documents\world.csv")
+df=pd.read_csv("world.csv")
 def height(miiheight):
     miiheight*=0.5
     miiheight+=140
