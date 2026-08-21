@@ -17,7 +17,7 @@ csizes=[]
 # not perfect image but an approximation of where the mole goes. Remember Miis are 3D and
 # the image is 2D
 img=plt.imread("default.png")
-df=pd.read_csv(r"C:\Users\chees\OneDrive\Microsoft Teams Chat Files\Documents\world.csv")
+df=pd.read_csv("world.csv")
 # collect the data, add it to the array as needed
 for i in range(1000):
     toggle = df.iloc[i]["mole_enable"]
