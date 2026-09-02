@@ -13,8 +13,8 @@ for power in range(-20,21):
      empirical[i]+=10**power
  empirical/=empirical.sum() # normalises it so its a prob dist
  # binomial distribution
- n = 1000
- p = 0.071652
+ n = 127
+ p = 0.564188976
  bindist = np.array([binom.pmf(k, n, p) for k in range(128)]) # gives each probability for the binomial
  # KL divergence
  kl = entropy(empirical, bindist) # uses binomial distribution as an approximation
