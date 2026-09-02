@@ -10,7 +10,7 @@ I didn't start this project for nothing, though, so rather than auditing what we
 #### Exploratory data analysis of height
 Plotted (as probability distributions) the empirical data, a horrible binomial approximation, and real life data worldwide from Our World in Data.  
 Findings:  
-- the variance is tiny on this data. a lot of people don't care enough to change the heights by that much, but it means using this already negatively skewed data, only 2.2% of these Miis are 180cm+ in human height. This means if you tried to use it to decide the height of a train, or a bus, an awful lot of people would bump their heads.  
+- the variance is tiny on this data. a lot of people don't care enough to change the heights by that much, but it means using this already leptokurtic data, only 2.2% of these Miis are 180cm+ in human height. This means if you tried to use it to decide the height of a train, or a bus, an awful lot of people would bump their heads.  
 - caveat: I got the height conversion from tomodachitools.com. There are other height converters like this which use a different scale which would skew my data (and you're free to edit that as you wish, although I have hardcoded it in some places and used a function in others, which is on me) and also most casual players won't know of such a height converter. Good chance they're eyeballing like crazy.  
 - very few insane outliers i.e. 0 or 127. There are a few 100+ heights but this makes sense as a young boy on his Wii U might want to appear like the main character of WaraWara Plaza.  
 - to do: KL divergence between the three distributions plotted. I want to see just how bad of a predictor the binomial model is.
@@ -25,9 +25,9 @@ R^2 = 0.252 to 3sf. That isn't horrible for the social sciences (which I guess i
 - Nobody actually knows; again, we are all eyeballing. We shouldn't expect R^2=1 anyway!  
 - Some heights had to be guessed which makes it even harder! For example, Tom from Eddsworld does not have a height that is well-documented, so I had to dig a bit to find an estimation that sounded about right.  
 Here is the PMCC, R^2, and its p value  
-0.502172500180734  
-0.2521772199377693  
-0.00020255114987027697  
+PMCC: 0.502172500180734  
+R^2: 0.2521772199377693  
+p-value: 0.00020255114987027697  
 Here is the line data  
 y = 0.5326643310810989x + 78.32355133594265  
 So yeah. People aren't the worst at guessing the heights of their GOATs... but by no means are they the best, either!
@@ -36,24 +36,26 @@ So yeah. People aren't the worst at guessing the heights of their GOATs... but b
 By far the coolest graphs are here but also the worst code...  
 I cleaned any weird looking data (and trust me there was a lot of dirty data. Idk how it got there but it's dirty.)  
 by using the 3DBrew Mii specification. The plots also have an image for guidance on where the mole might go on a real Mii.  
-                x           y           s  
-count  210.000000  210.000000  210.000000  
-mean     6.842857  -18.842857    1.828571  
-std      3.925024    5.381083    1.048646  
-min      2.000000  -30.000000    0.000000  
-25%      2.000000  -21.000000    1.000000  
-50%     10.000000  -17.500000    2.000000  
-75%     10.000000  -14.000000    3.000000  
-max     11.000000  -12.000000    5.000000  
-              x          y         s  
-count  6.000000   6.000000  6.000000  
-mean   7.666667 -22.333333  5.833333  
-std    0.816497   7.711463  2.041241  
-min    6.000000 -28.000000  4.000000  
-25%    8.000000 -26.750000  4.000000  
-50%    8.000000 -26.000000  5.500000  
-75%    8.000000 -20.750000  7.750000  
-max    8.000000  -8.000000  8.000000  
+**NNID Miis (210)**  
+| statistic | x (horizontal) | y (vertical) | s (size) |
+|-----------|---------------|--------------|----------|
+| mean      | 6.842857      | -18.842857   | 1.828571 |
+| std       | 3.925024      | 5.381083     | 1.048646 |
+| min       | 2.000000      | -30.000000   | 0.000000 |
+| 25%       | 2.000000      | -21.000000   | 1.000000 |
+| 50%       | 10.000000     | -17.500000   | 2.000000 |
+| 75%       | 10.000000     | -14.000000   | 3.000000 |
+| max       | 11.000000     | -12.000000   | 5.000000 |
+**Celebrity Miis (6)**  
+| statistic | x (horizontal) | y (vertical) | s (size) |
+|-----------|---------------|--------------|----------|
+| mean      | 7.666667      | -22.333333   | 5.833333 |
+| std       | 0.816497      | 7.711463     | 2.041241 |
+| min       | 6.000000      | -28.000000   | 4.000000 |
+| 25%       | 8.000000      | -26.750000   | 4.000000 |
+| 50%       | 8.000000      | -26.000000   | 5.500000 |
+| 75%       | 8.000000      | -20.750000   | 7.750000 |
+| max       | 8.000000      | -8.000000    | 8.000000 |
 The EDA says this for the NNID and celebrity Miis. Just at a glance you can see the mean Manhattan distance is larger on the celebrity Miis, and to be fair only 6 celebrity Miis had valid moles, but still a noteworthy finding for later.  
 This program plots where the moles go on the face and we can kinda see some patterns that emerge. I see some clusters here that look pretty interesting... but do those clusters actually exist, or is it all in my head?  
 Using the elbow method, I found out wrongly that we need 3 clusters, and correctly that I needed 2! Stupid mistake but it was my first time deploying this method, so I'm not too angry at myself for it. I can see me forgiving myself in like a couple of months.  
