@@ -57,6 +57,7 @@ by using the 3DBrew Mii specification. The plots also have an image for guidance
 | 50%       | 8.000000      | -26.000000   | 5.500000 |
 | 75%       | 8.000000      | -20.750000   | 7.750000 |
 | max       | 8.000000      | -8.000000    | 8.000000 |
+  
 The EDA says this for the NNID and celebrity Miis. Just at a glance you can see the mean Manhattan distance is larger on the celebrity Miis, and to be fair only 6 celebrity Miis had valid moles, but still a noteworthy finding for later.  
 This program plots where the moles go on the face and we can kinda see some patterns that emerge. I see some clusters here that look pretty interesting... but do those clusters actually exist, or is it all in my head?  
 Using the elbow method, I found out wrongly that we need 3 clusters, and correctly that I needed 2! Stupid mistake but it was my first time deploying this method, so I'm not too angry at myself for it. I can see me forgiving myself in like a couple of months.  
