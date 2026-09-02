@@ -45,7 +45,8 @@ by using the 3DBrew Mii specification. The plots also have an image for guidance
 | 25%       | 2.000000      | -21.000000   | 1.000000 |
 | 50%       | 10.000000     | -17.500000   | 2.000000 |
 | 75%       | 10.000000     | -14.000000   | 3.000000 |
-| max       | 11.000000     | -12.000000   | 5.000000 |  
+| max       | 11.000000     | -12.000000   | 5.000000 |
+  
 **Celebrity Miis (6)**  
 | statistic | x (horizontal) | y (vertical) | s (size) |
 |-----------|---------------|--------------|----------|
