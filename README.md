@@ -6,8 +6,8 @@ I think a few ideas already come to mind as to how you might expect this to go; 
 I didn't start this project for nothing, though, so rather than auditing what we *think* will be the case, let's get to analysis.  
   
 **N.B.** This might not look the cleanest at the moment though as it is a work in progress. As more progress is made, this page will look neater.  
-**Findings**
-###### Exploratory data analysis of height
+**Findings**  
+#### Exploratory data analysis of height
 Plotted (as probability distributions) the empirical data, a horrible binomial approximation, and real life data worldwide from Our World in Data.  
 Findings:  
 - the variance is tiny on this data. a lot of people don't care enough to change the heights by that much, but it means using this already negatively skewed data, only 2.2% of these Miis are 180cm+ in human height. This means if you tried to use it to decide the height of a train, or a bus, an awful lot of people would bump their heads.  
@@ -15,7 +15,7 @@ Findings:
 - very few insane outliers i.e. 0 or 127. There are a few 100+ heights but this makes sense as a young boy on his Wii U might want to appear like the main character of WaraWara Plaza.  
 - to do: KL divergence between the three distributions plotted. I want to see just how bad of a predictor the binomial model is.
 ![The graphs of empirical Mii height data, a binomial model for such data, and the normal distribution of human height from OWiD](readmestuff/freerangeMiiHeights.png)
-###### Celebrity EDA - how good are humans at height predictions?
+#### Celebrity EDA - how good are humans at height predictions?
 Not the worst ever. But not reliable. But that's fine. We're human.  
 At the 1% significance level, the p value is way too low for there not to be a positive correlation. That means humans are better than chance is at getting a Mii's height right. It makes sense, as you would probably make Michael Jordan taller than Markiplier when making them both as Miis, or you might not change their heights at all. You wouldn't make MJ shorter, though, would you?  
 Anyways, here are some cool findings.  
@@ -32,7 +32,7 @@ Here is the line data
 y = 0.5326643310810989x + 78.32355133594265  
 So yeah. People aren't the worst at guessing the heights of their GOATs... but by no means are they the best, either!
 ![The regression line](readmestuff/celebGraph.png)
-######Holy spaghetti code
+#### Holy spaghetti code  
 By far the coolest graphs are here but also the worst code...  
 I cleaned any weird looking data (and trust me there was a lot of dirty data. Idk how it got there but it's dirty.)  
 by using the 3DBrew Mii specification. The plots also have an image for guidance on where the mole might go on a real Mii.  
