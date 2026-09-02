@@ -24,10 +24,13 @@ R^2 = 0.252 to 3sf. That isn't horrible for the social sciences (which I guess i
 - Some Miis, like Snoop Dogg, were added twice. These are two separate interpretations of the celebrity, so that means their heights are different. Hence by counterexample you cannot draw a straight line plotting all these points.  
 - Nobody actually knows; again, we are all eyeballing. We shouldn't expect R^2=1 anyway!  
 - Some heights had to be guessed which makes it even harder! For example, Tom from Eddsworld does not have a height that is well-documented, so I had to dig a bit to find an estimation that sounded about right.  
-Here is the PMCC, R^2, and its p value  
-PMCC: 0.502172500180734  
-R^2: 0.2521772199377693  
-p-value: 0.00020255114987027697  
+Here is the PMCC, R^2, and its p value
+| statistic | value |
+|---------|---------|
+| PMCC | 0.502172500180734 |
+| R^2 | 0.2521772199377693 |
+| p-value | 0.00020255114987027697 |
+  
 Here is the line data  
 y = 0.5326643310810989x + 78.32355133594265  
 So yeah. People aren't the worst at guessing the heights of their GOATs... but by no means are they the best, either!
