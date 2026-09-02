@@ -4,8 +4,8 @@ import numpy as np
 from scipy.stats import binom
 from scipy.stats import norm
 # np = mean of a binomial. we know there are 1000 freerange Miis, so we can work out an estimate of p.
-n = 1000
-p = 0.071652
+n = 127
+p = 0.564188976
 # height ranges from 0 to 127, with 0 being 140cm, 127 being 203.5cm, and a linear scale between
 df=pd.read_csv("world.csv")
 def height(miiheight):
